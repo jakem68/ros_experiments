@@ -4,7 +4,7 @@
 - [kuroemon2509 ROS cheatsheet](https://github.com/kuroemon2509/ROS-cheatsheet)
 - [Turtlesim](http://wiki.ros.org/ROS/Tutorials/UnderstandingNodes)
 
-## Docker links
+## docker links
 * Docker sandbox: https://training.play-with-docker.com/beginner-linux/#Task_2
 * Docker images: https://hub.docker.com/search?q=idlab&type=image
 * ROS Docker image: https://hub.docker.com/_/ros
