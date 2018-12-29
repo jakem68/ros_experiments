@@ -30,9 +30,9 @@
 
       docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node"
 
-** Start more than one by giving individual names
-
-    docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"
+  * Start more than one by giving individual names:
+  
+        docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"
 
 * Added ros-kinetic-rqt and ros-kinetic-rqt-common-plugins tot Dockerfile → rebuild images
 * Pushed to Docker online as jankempeneers/ros-tutorials:rqt
