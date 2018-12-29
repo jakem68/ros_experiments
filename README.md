@@ -6,7 +6,7 @@
 
 ## fiddling with ros in Docker containers
 * From starting individual services off from image to setting up a docker-compose file: https://docs.docker.com/samples/library/ros/#networks
-* Docker compose: '$ docker-compose up -d'
+* Docker compose: ' $ docker-compose up -d '
 
 Start rosmaster container with access to display
 docker run --rm -it -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY roskinetic_master
