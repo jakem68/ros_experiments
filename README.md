@@ -29,7 +29,8 @@
 * Start turtlesim in running rosmaster container:
 
       docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node"
-** start more than one by giving individual names
+
+** Start more than one by giving individual names
 
     docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"
 
