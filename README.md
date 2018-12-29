@@ -31,9 +31,9 @@
 
 * Added ros-kinetic-rqt and ros-kinetic-rqt-common-plugins tot Dockerfile → rebuild images
 * Pushed to Docker online as jankempeneers/ros-tutorials:rqt
-```
-docker login
-docker tag 2648c60f3e98 jankempeneers/ros-tutorials:rqt
-docker push jankempeneers/ros-tutorials:rqt
-```
+
+    docker login
+    docker tag 2648c60f3e98 jankempeneers/ros-tutorials:rqt
+    docker push jankempeneers/ros-tutorials:rqt
+
 
