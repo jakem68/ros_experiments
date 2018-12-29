@@ -21,20 +21,23 @@
 * Docker compose: ` $ docker-compose up -d `
 
 * Start ros master container with access to display
-	`docker run --rm -it -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY roskinetic_master`
+
+      docker run --rm -it -d -v /tmp/.X11-unix:/tmp/.X11-unix -e DISPLAY roskinetic_master
 	*(afterwards added to docker-compose file)*
 * Start rosmaster container with access to hardware acceleration (previously error starting up turtlesim_node): added `devices: - /dev/dri` *(added to docker-compose file)*
 
-* Start turtlesim in running rosmaster container: 
-	`docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node"`
-** start more than one by giving individual names 
-	`docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"`
+* Start turtlesim in running rosmaster container:
+
+      docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node"
+** start more than one by giving individual names
+
+    docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"
 
 * Added ros-kinetic-rqt and ros-kinetic-rqt-common-plugins tot Dockerfile → rebuild images
 * Pushed to Docker online as jankempeneers/ros-tutorials:rqt
 
-    docker login
-    docker tag 2648c60f3e98 jankempeneers/ros-tutorials:rqt
-    docker push jankempeneers/ros-tutorials:rqt
+      docker login
+      docker tag 2648c60f3e98 jankempeneers/ros-tutorials:rqt
+      docker push jankempeneers/ros-tutorials:rqt
 
 
