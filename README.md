@@ -9,8 +9,9 @@
 * Docker images: https://hub.docker.com/search?q=idlab&type=image
 * ROS Docker image: https://hub.docker.com/_/ros
 * Do not run docker images as root: https://medium.com/@mccode/processes-in-containers-should-not-run-as-root-2feae3f0df3b `--user $(id -u):$(id -g)`
-* Running multiple commands with docker exec: 
-	`sudo docker exec boring_hawking bash -c "cd /var/log ; tar -cv ./file.log"`
+* Running multiple commands with docker exec:
+
+      sudo docker exec boring_hawking bash -c "cd /var/log ; tar -cv ./file.log"
 
 * Uploading and tagging the Docker repository: https://docs.docker.com/get-started/part2/#tag-the-image
 
