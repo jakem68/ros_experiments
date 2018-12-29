@@ -14,7 +14,7 @@
 * Uploading and tagging the Docker repository: https://docs.docker.com/get-started/part2/#tag-the-image
 
 
-## fiddling with ros in Docker containers
+## fiddling with ros in docker containers
 * From starting individual services off from image to setting up a docker-compose file: https://docs.docker.com/samples/library/ros/#networks
 * Docker compose: ` $ docker-compose up -d `
 
@@ -24,6 +24,7 @@
 * Start rosmaster container with access to hardware acceleration (previously error starting up turtlesim_node): added `devices: - /dev/dri` *(added to docker-compose file)*
 
 * Start turtlesim in running rosmaster container: `docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node"`
+** start more than one by giving individual names `docker exec master bash -c "source ros_entrypoint.sh ; rosrun turtlesim turtlesim_node __name:=turtle1"`
 
 * Added ros-kinetic-rqt and ros-kinetic-rqt-common-plugins tot Dockerfile → rebuild images
 * Pushed to Docker online as jankempeneers/ros-tutorials:rqt
