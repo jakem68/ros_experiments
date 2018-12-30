@@ -1,0 +1,65 @@
+version: '2'
+services:
+  master:
+    build: .
+    container_name: master
+    # volumes:
+    #   - "/tmp/.X11-unix:/tmp/.X11-unix"
+    # environment:
+    #   - DISPLAY
+    # devices:
+    #   - /dev/dri
+    command:
+      - roscore
+
+  talker:
+    build: .
+    container_name: talker
+    environment:
+      - "ROS_HOSTNAME=talker"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun roscpp_tutorials talker
+
+  listener:
+    build: .
+    container_name: listener
+    environment:
+      - "ROS_HOSTNAME=listener"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun roscpp_tutorials listener
+
+  turtlesim:
+    build: .
+    container_name: turtlesim
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    devices:
+      - /dev/dri
+    environment:
+      - DISPLAY
+      - "ROS_HOSTNAME=turtlesim"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun turtlesim turtlesim_node
+
+  ros_rqt:
+    build: .
+    container_name: ros_rqt
+    volumes:
+      - "/tmp/.X11-unix:/tmp/.X11-unix"
+    devices:
+      - /dev/dri
+    environment:
+      - DISPLAY
+      - "ROS_HOSTNAME=ros-rqt"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun rqt_graph rqt_graph
+
+  turtleteleop:
+    build: .
+    container_name: turtleteleop
+    stdin_open: true
+    tty: true
+    environment:
+      - "ROS_HOSTNAME=turtleteleop"
+      - "ROS_MASTER_URI=http://master:11311"
+    command: rosrun turtlesim turtle_teleop_key
