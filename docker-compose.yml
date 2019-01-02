@@ -9,8 +9,7 @@ services:
     #   - DISPLAY
     # devices:
     #   - /dev/dri
-    command:
-      - roscore
+    command: roscore
 
   talker:
     build: .
@@ -57,8 +56,8 @@ services:
   turtleteleop:
     build: .
     container_name: turtleteleop
-    stdin_open: true
-    tty: true
+    # stdin_open: true
+    # tty: true
     environment:
       - "ROS_HOSTNAME=turtleteleop"
       - "ROS_MASTER_URI=http://master:11311"
